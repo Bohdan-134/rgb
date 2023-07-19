@@ -2,3 +2,11 @@ mixin datatime(imgSrc, imgAlt, text)
     .datatime-item
         img(src!=imgSrc, alt!=imgAlt)
         p.datatime-text= text
+
+mixin info({imgSrc, imgAlt, title, text})
+    li.content-info-item
+        .info-img
+            img(src!=imgSrc, alt!=imgAlt)
+        .info-text-content
+            h4.info-title!=title
+            p.info-text=text

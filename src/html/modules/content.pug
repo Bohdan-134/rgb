@@ -1,0 +1,23 @@
+include ../utils/mixin.pug
+.content
+    .content-title-top
+        include ../../img/icons/globe.svg
+        span Вебинар
+    h1.content-title front-end
+    p.content-subtitle
+        span с нуля
+        | легкий старт в IT профессии
+    p.content-text Узнайте какими <strong>навыками должен обладать фронтенд разработчик в 2022 году</strong> и как начать карьеру в востребованной профессии 
+    ul.content-info-list
+        +info({
+            imgSrc: '../../img/photo.webp',
+            imgAlt: 'photo',
+            title:  'Кирилл <span>КАСАТОНОВ</span>',
+            text: '6 лет коммерческого опыта с такими  компаниями как Mercedes-Benz и другими крупными корпорациями'
+        })
+        +info({
+            imgSrc: '../../img/present.webp',
+            imgAlt: 'present',
+            title: 'Бонус за регистрацию',
+            text: 'PDF-файл "5 преимуществ профессии фронтенд разработчика" '
+        })
