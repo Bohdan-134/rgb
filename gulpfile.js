@@ -25,6 +25,10 @@ const paths = {
     img: {
         src: 'src/img/**/*.{png,svg,jpeg}',
         dist: 'dist/img/'
+    },
+    fonts: {
+        src: 'src/fonts/*.{eot,woff,ttf}',
+        dist: 'dist/fonts'
     }
 }
 
@@ -67,6 +71,13 @@ function images() {
         .pipe(browserSync.stream());
 }
 
+function fonts() {
+    return gulp
+        .src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dist))
+        .pipe(browserSync.stream());
+}
+
 function watch() {
     browserSync.init({
         server: {
@@ -77,12 +88,13 @@ function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.scripts.src, scripts);
     gulp.watch(paths.img.src, images);
+    gulp.watch(paths.fonts.src, fonts);
 }
 
 const build = gulp.series(
     clean,
     pug,
-    gulp.parallel(styles, scripts, images),
+    gulp.parallel(styles, scripts, images, fonts),
     watch
 );
 
@@ -91,4 +103,5 @@ exports.pug = pug;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;
+exports.fonts = fonts;
 exports.default = build;
