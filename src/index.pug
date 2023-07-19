@@ -1,10 +1,20 @@
 doctype html
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="./css/main.css")
-        title Test
+        title RGB
     body
-        h1 ABOBA
+        #wrapper
+            header.header
+                .container
+                    include ./html/modules/header.pug
+            main.main
+                .container
+                    include ./html/modules/content.pug
+                    include ./html/modules/form.pug
+            footer.footer
+                h3.footer-text front-end developer
+            

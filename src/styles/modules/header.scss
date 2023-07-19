@@ -1,0 +1,24 @@
+@import '../utils/main.utils.scss';
+.header {
+    .container {
+        @include flex(row, space-between, center);
+    }
+}
+
+.datetime {
+    @include flex(row, null, center);
+}
+
+.datatime-item {
+    margin: 0 9px;
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #302E5A;
+    @include flex(row, center, center);
+    .datatime-text {
+        margin-left: 6px;
+        cursor: default;
+        @include font(14px, 600, 14px, $COLOR__WHITE);
+    }
+}
