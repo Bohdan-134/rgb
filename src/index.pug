@@ -4,6 +4,7 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css")
         link(rel="stylesheet", href="./css/main.css")
         title RGB
     body
@@ -15,6 +16,10 @@ html(lang="ru")
                 .container
                     include ./html/modules/content.pug
                     include ./html/modules/form.pug
+                include ./html/modules/icons.pug
+                .letter
             footer.footer
-                h3.footer-text front-end developer
+                include ./html/modules/footer.pug
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js')
+            script(src='./js/main.js' type='module')
             

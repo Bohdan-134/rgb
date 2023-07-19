@@ -8,6 +8,7 @@
     padding: 6px 13px;
     border-radius: 5px;
     background-color: $COLOR__BLUE;
+    animation: to-top .7s .2s both;
     @include flex(row, null, center);
     span {
         margin-left: 7px;
@@ -17,11 +18,13 @@
 
 .content-title {
     text-transform: uppercase;
+    animation: to-top .7s .4s both;
     @include font(77px, 800, normal, $COLOR__RED);
 }
 
 p.content-subtitle {
     @include font(22px, 600, normal, $COLOR__WHITE);
+    animation: to-top .7s .6s both;
     span {
         margin: 0 30px 0 13px;
         position: relative;
@@ -30,6 +33,7 @@ p.content-subtitle {
         @include font(24px, 800, normal, $COLOR__WHITE);
         &::before {
             content: '';
+            display: block;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -39,18 +43,20 @@ p.content-subtitle {
             height: 39px;
             border-radius: 5px;
             background-color: $COLOR__RED;
+            animation: rotate .3s 2s both;
         }
     }
 }
 
 .content-text {
     margin: 30px 0 60px;
+    animation: to-top .7s .8s both;
     @include font(18px, 400, 148%, $COLOR__WHITE);
 }
 
 .content-info-list {
     .content-info-item {
-        margin-bottom: 16px;
+        margin-bottom: 11px;
         @include flex(row, null, center);
         .info-img {
             min-width: 56px;
@@ -67,6 +73,7 @@ p.content-subtitle {
             }
         }
         &:first-child {
+            animation: to-top .7s 1s both;
             .info-text-content {
                 .info-title {
                     font-size: 13px;
@@ -79,6 +86,7 @@ p.content-subtitle {
         }
         &:last-child {
             margin-bottom: 0;
+            animation: to-top .7s 1.2s both;
         }
     }
 }

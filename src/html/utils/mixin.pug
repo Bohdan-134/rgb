@@ -1,7 +1,7 @@
-mixin datatime(imgSrc, imgAlt, text)
+mixin datatime(className, imgSrc, imgAlt, text)
     .datatime-item
         img(src!=imgSrc, alt!=imgAlt)
-        p.datatime-text= text
+        p(class!=className).datatime-text= text
 
 mixin info({imgSrc, imgAlt, title, text})
     li.content-info-item
@@ -10,3 +10,8 @@ mixin info({imgSrc, imgAlt, title, text})
         .info-text-content
             h4.info-title!=title
             p.info-text=text
+
+mixin icon({className, imgSrc, imgAlt})
+    div(class!=className).icon-item
+        .icon-wrapper
+            img(src!=imgSrc, alt!=imgAlt)

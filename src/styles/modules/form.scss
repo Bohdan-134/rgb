@@ -1,0 +1,83 @@
+@import '../utils/main.utils.scss';
+.form-wrapper {
+    padding: 50px 60px;
+    max-width: 365px;
+    border-radius: 10px;
+    background: #303A53;
+    animation: to-top .7s .3s both;
+    @include flex(column, null, center);
+    .form-title {
+        text-align: center;
+        animation: to-top .7s .5s both;
+        @include font(22px, 700, 26px, $COLOR__WHITE);
+        span {
+            color: $COLOR__RED;
+        }
+    }
+}
+
+#registrationForm {
+    width: 100%;
+    margin: 20px 0;
+    .form-group {
+        width: 100%;
+        margin-bottom: 14px;
+        input {
+            padding: 14px 22px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #272D3D;
+            @include font(13px, 400, 24px, #D7D7D7);
+            &::placeholder {
+                @include font(13px, 400, 24px, #D7D7D7);
+            }
+        }
+        &:nth-child(1) {
+            animation: to-top .7s .7s both;
+        }
+        &:nth-child(2) {
+            animation: to-top .7s .9s both;
+        }
+        &:nth-child(3) {
+            animation: to-top .7s 1.1s both;
+        }
+    }
+    #btnSendMessage {
+        padding: 14px 40px;
+        width: 100%;
+        border-radius: 5px;
+        background-color: $COLOR__RED;
+        transition: .3s;
+        animation: to-top .7s 1.3s both;
+        @include font(15px, 700, 24px, $COLOR__WHITE);
+        &:hover {
+            background-color: #ad203a;
+        }
+    }
+}
+
+.warning {
+    animation: to-top .7s 1.5s both;
+    @include font(12px, 500, 149%, rgba(255, 255, 255, 0.50));
+    @include flex(column, null, center);
+    #open-rules {
+        cursor: pointer;
+        text-decoration-line: underline !important;
+        background-color: transparent;
+        transition: .3s;
+        @include font(12px, 500, 149%, rgba(255, 255, 255, 0.50));
+        &:hover {
+            color: $COLOR__RED;
+        }
+    }
+}
+
+.iti {
+    .iti__flag-container {
+        .iti__selected-flag {
+            .iti__selected-dial-code {
+                @include font(12px, 500, 12px, #D7D7D7);
+            }
+        }
+    }
+}

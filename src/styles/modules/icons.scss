@@ -1,0 +1,92 @@
+.icon-item {
+    position: absolute;
+    .icon-wrapper {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+        }
+    }
+}
+
+.icon-item.html {
+    top: 124px;
+    right: 36px;
+    animation: to-top .7s .2s both;
+    .icon-wrapper {
+        &::before {
+            right: -7px;
+            top: 20px;
+            width: 8px;
+            height: 8px;
+            background-color: #F16529;
+            animation: scale .4s 2s both;
+        }
+    }
+}
+
+.icon-item.css {
+    top: 228px;
+    right: 134px;
+    animation: to-top .7s .4s both;
+    .icon-wrapper {
+        &::before {
+            right: 9px;
+            top: -5px;
+            width: 6px;
+            height: 6px;
+            background-color: #2965F1;
+            animation: scale .4s 2.2s both;
+        }
+    }
+}
+
+.icon-item.js {
+    top: 290px;
+    right: 36px;
+    animation: to-top .7s .6s both;
+    .icon-wrapper {
+        &::before {
+            right: -14px;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            background-color: #F0BE25;
+            animation: scale .4s 2.4s both;
+        }
+    }
+}
+
+.icon-item.sublime {
+    top: 368px;
+    right: 153px;
+    animation: to-top .7s .8s both;
+    .icon-wrapper {
+        &::before {
+            right: 2px;
+            top: -12px;
+            width: 6px;
+            height: 6px;
+            background-color: #FF9800;
+            animation: scale .4s 2.6s both;
+        }
+    }
+}
+
+.icon-item.vs {
+    top: 433px;
+    right: 66px;
+    animation: to-top .7s 1s both;
+    .icon-wrapper {
+        &::before {
+            right: -10px;
+            top: 59px;
+            width: 6px;
+            height: 6px;
+            background-color: #48AEF3;
+            animation: scale .4s 2.8s both;
+        }
+    }
+}

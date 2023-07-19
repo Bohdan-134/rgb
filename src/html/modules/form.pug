@@ -1,0 +1,16 @@
+.form-wrapper
+    h3.form-title Запишитесь <span>бесплатно</span> и получите подарок
+    form#registrationForm
+        .form-group
+            input#nameInput(type='text' placeholder='Ваше имя и фамилия' required='')
+            .err
+        .form-group
+            input#phoneInput(type='tel' placeholder='Ваш номер телефона' required='')
+            .err
+        .form-group
+            input#emailInput(type='email' placeholder='Ваш email' required='')
+            .err
+        button(type='submit')#btnSendMessage Записаться бесплатно
+    .warning
+        span Нажимая на кнопку я согашаюсь
+        button#open-rules с политикой конфидециальности
