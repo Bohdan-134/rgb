@@ -126,3 +126,26 @@ const emailInput = document.getElementById('emailInput');
 nameInput.addEventListener('input', handleInputChange);
 phoneInput.addEventListener('input', handleInputChange);
 emailInput.addEventListener('input', handleInputChange);
+
+//modal
+const modalWrapper = document.getElementById('#modal-wrapper');
+const btnOpenModal = document.getElementById('open-rules');
+const containerModal = document.querySelector('#modal-wrapper .container');
+
+btnOpenModal.addEventListener('mouseenter', () => wrapper.classList.add('hover-btn-rules'));
+btnOpenModal.addEventListener('mouseleave', () => wrapper.classList.remove('hover-btn-rules'));
+
+btnOpenModal.addEventListener('click', () => {
+    wrapper.classList.add('hover-btn-open');
+
+    const removeClassOnOutsideClick = (event) => {
+        if (!containerModal.contains(event.target)) {
+            wrapper.classList.remove('hover-btn-open');
+            document.removeEventListener('click', removeClassOnOutsideClick);
+        }
+    };
+
+    setTimeout(() => {
+        document.addEventListener('click', removeClassOnOutsideClick);
+    }, 500);
+});

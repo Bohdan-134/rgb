@@ -1,0 +1,45 @@
+@import '../utils/main.utils.scss';
+#modal-wrapper {
+    padding: 100px 20px;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: 999;
+    width: 100%;
+    min-height: calc(107px + 100%);
+    background-color: #332f657e;
+    backdrop-filter: blur(15px);
+    transition: .5s;
+    @include flex(row, center, flex-start);
+    .container {
+        margin: 0;
+    }
+}
+
+.modal-title {
+    margin-bottom: 45px;
+    text-align: center;
+    @include font(40px, 600, 40px, $COLOR__RED);
+}
+
+.modal-text-content {
+    p {
+        @include font(20px, 400, 20px, $COLOR__WHITE);
+    }
+}
+
+.modal-list {
+    margin: 30px 0;
+    .modal-item {
+        margin-bottom: 10px;
+        list-style-type: circle;
+        @include font(15px, 300, 15px, #ffffff99);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #modal-wrapper {
+        min-height: 100%;
+        border-radius: 20px;
+    }
+}

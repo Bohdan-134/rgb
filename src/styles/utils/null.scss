@@ -137,6 +137,18 @@ h6 {
     }
 }
 
+#wrapper.hover-btn-rules {
+    #modal-wrapper {
+        left: -95%;
+    }
+}
+
+#wrapper.hover-btn-open {
+    #modal-wrapper {
+        left: 0%;
+    }
+}
+
 .container {
     padding: 24px 56px;
     width: 100%;
