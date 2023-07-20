@@ -2,14 +2,12 @@
     h3.form-title Запишитесь <span>бесплатно</span> и получите подарок
     form#registrationForm
         .form-group
-            input#nameInput(type='text' placeholder='Ваше имя и фамилия' required='')
-            .err
+            input#nameInput(type='text' name="user__name" autocomplete="off"  placeholder='Ваше имя и фамилия' required='')
         .form-group
-            input#phoneInput(type='tel' placeholder='Ваш номер телефона' required='')
-            .err
+            input#phoneInput(type='tel' name="user__phone" placeholder='Ваш номер телефона' required='')
         .form-group
-            input#emailInput(type='email' placeholder='Ваш email' required='')
-            .err
+            input#emailInput(type='email' name="user__mail" autocomplete="off" placeholder='Ваш email' required='')
+        .err
         button(type='submit')#btnSendMessage Записаться бесплатно
     .warning
         span Нажимая на кнопку я согашаюсь

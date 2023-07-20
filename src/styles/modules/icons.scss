@@ -1,5 +1,6 @@
 .icon-item {
     position: absolute;
+    z-index: 1;
     .icon-wrapper {
         position: relative;
         &::before {

@@ -1,6 +1,8 @@
 @import '../utils/main.utils.scss';
 .form-wrapper {
     padding: 50px 60px;
+    position: relative;
+    z-index: 2;
     max-width: 365px;
     border-radius: 10px;
     background: #303A53;
@@ -36,6 +38,8 @@
             animation: to-top .7s .7s both;
         }
         &:nth-child(2) {
+            position: relative;
+            z-index: 9;
             animation: to-top .7s .9s both;
         }
         &:nth-child(3) {
@@ -52,6 +56,12 @@
         @include font(15px, 700, 24px, $COLOR__WHITE);
         &:hover {
             background-color: #ad203a;
+        }
+    }
+    #btnSendMessage.disabled {
+        cursor: not-allowed;
+        &:hover {
+            background-color: $COLOR__RED;
         }
     }
 }

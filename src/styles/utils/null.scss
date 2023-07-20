@@ -176,17 +176,20 @@ h6 {
     }
 }
 
-
-/* Стили для анимации пересчета цифр */
-
-.datatime-text {
-    font-size: 24px;
-    white-space: nowrap;
-}
-
 .letter {
     position: absolute;
     z-index: -1;
     animation: scale .3s;
-    @include font(25px, 700, 25px, #ffffff57);
+    @include font(28px, 700, 28px, #ffffff34);
+}
+
+.err {
+    margin-bottom: 14px;
+    width: 100%;
+    @include flex(row, center, center);
+    div {
+        text-align: center;
+        animation: scale .4s;
+        @include font(12px, 400, 12px, $COLOR__RED);
+    }
 }

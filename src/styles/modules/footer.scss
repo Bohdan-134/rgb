@@ -7,6 +7,7 @@
     position: relative;
     animation: marquee 8s 3s linear infinite both;
     text-transform: uppercase;
+    white-space: nowrap;
     -webkit-text-stroke: 3px #ffffff0d;
     text-stroke: 3px #ffffff0d;
     @include font(129px, 800, 97px, #ffffff00);

@@ -1,30 +1,102 @@
 import { animateDigits } from './modules/animation.js';
 import { iti } from './modules/iti.js';
 
+// animation counter
 document.addEventListener('DOMContentLoaded', function() {
     animateDigits('.datatime-text__date', 28, 2500);
     animateDigits('.datatime-text__time', 3.5, 1500);
 });
 
-document.getElementById("registrationForm").addEventListener("submit", function(e) {
+
+
+// send form
+const form = document.getElementById('registrationForm');
+const name = document.getElementById("nameInput");
+const email = document.getElementById("emailInput");
+const submitBtn = document.getElementById('btnSendMessage');
+
+const publicKey = 'NV-xCivxFoWd-Yd9Y';
+const serviceID = 'service_1ofas5d';
+const templateID = 'template_oz8qpmq';
+
+emailjs.init(publicKey);
+
+form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const name = document.getElementById("nameInput").value;
-    const email = document.getElementById("emailInput").value;
-    const phoneNumber = iti.getNumber();
+    if (!isValidName(name.value)) {
+        showError("Пожалуйста, введите правильное имя и фамилию.");
+        return;
+    }
 
-    console.log("Имя и фамилия:", name);
-    console.log("Email:", email);
-    console.log("Номер телефона:", phoneNumber);
+    if (!isValidEmail(email.value)) {
+        showError("Пожалуйста, введите правильный адрес электронной почты.");
+        return;
+    }
+
+    if (!isValidPhoneNumber(iti.getNumber())) {
+        showError("Пожалуйста, введите правильный номер телефона.");
+        return;
+    }
+
+    submitBtn.innerText = 'Подождите минутку...';
+    const inputFields = {
+        name: name.value,
+        phone: iti.getNumber(),
+        email: email.value,
+    }
+
+    emailjs.send(serviceID, templateID, inputFields)
+        .then(() => {
+            submitBtn.innerText = 'Отправлено)';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('disabled');
+            form.reset();
+        }, (error) => {
+            console.log(error);
+        });
 });
 
+function isValidName(name) {
+    return name.trim() !== '';
+}
+
+function isValidEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
+
+function isValidPhoneNumber(phoneNumber) {
+
+    if (isNaN(phoneNumber)) {
+        return false;
+    }
+
+    return phoneNumber.length === 13;
+}
+
+function showError(errorMessage) {
+    const errorElement = document.createElement("div");
+    errorElement.className = "error-message";
+    errorElement.textContent = errorMessage;
+
+    const errorContainer = document.querySelector(".err");
+    errorContainer.innerHTML = '';
+    errorContainer.appendChild(errorElement);
+
+    setTimeout(function() {
+        errorContainer.innerHTML = '';
+    }, 3000);
+}
+
+// animation send btn
 const wrapper = document.getElementById('wrapper');
 const btnSendMessage = document.getElementById('btnSendMessage');
 
 btnSendMessage.addEventListener('mouseenter', () => wrapper.classList.add('hover-btn'));
 btnSendMessage.addEventListener('mouseleave', () => wrapper.classList.remove('hover-btn'));
 
-
+// animation input print
 function createLetterDiv(character) {
     const letterDiv = document.createElement('div');
     letterDiv.classList.add('letter');
