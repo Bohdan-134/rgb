@@ -166,7 +166,15 @@ h6 {
     }
 }
 
-@media screen and (max-height: 799px) {
+.letter {
+    position: absolute;
+    z-index: -1;
+    animation: scale .3s;
+    @include font(28px, 700, 28px, #ffffff34);
+}
+
+@media screen and (max-height: 799px),
+screen and (max-width: 1200px) {
     #wrapper {
         overflow-y: scroll;
     }
@@ -188,20 +196,44 @@ h6 {
     }
 }
 
-.letter {
-    position: absolute;
-    z-index: -1;
-    animation: scale .3s;
-    @include font(28px, 700, 28px, #ffffff34);
+@media screen and (max-width: 1400px) {
+    .main {
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+    }
 }
 
-.err {
-    margin-bottom: 14px;
-    width: 100%;
-    @include flex(row, center, center);
-    div {
-        text-align: center;
-        animation: scale .4s;
-        @include font(12px, 400, 12px, $COLOR__RED);
+@media screen and (max-width: 950px) {
+    .main {
+        padding: 35px 0 27px;
+        .container {
+            @include flex(column, null, center);
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #wrapper {
+        &::before {
+            width: 180px;
+            height: 180px;
+            top: 304px;
+            left: -11%;
+        }
+        &::after {
+            width: 912px;
+            height: 912px;
+            top: 50%;
+            left: -13%;
+            transform: rotate(0) translateY(-50%);
+        }
+    }
+    .main {
+        padding: 32px 0 0;
+    }
+    .container {
+        padding: 0px 16px;
     }
 }

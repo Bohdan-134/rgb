@@ -12,3 +12,9 @@
     text-stroke: 3px #ffffff0d;
     @include font(129px, 800, 97px, #ffffff00);
 }
+
+@media screen and (max-width: 700px) {
+    footer {
+        display: none !important;
+    }
+}

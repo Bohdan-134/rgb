@@ -1,0 +1,55 @@
+@import '../utils/main.utils.scss';
+.mobile-content-info-list {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .mobile-content-info-list {
+        display: inline-block;
+        margin: 40px 0 20px 0;
+        .content-info-list {
+            display: inline-block;
+            .content-info-item {
+                max-width: 400px;
+                text-align: center;
+                @include flex(column, null, center);
+                .info-img {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .mobile-content-info-list {
+        margin: 36px 0 50px;
+        .content-info-list {
+            .content-info-item {
+                max-width: 230px;
+                @include flex(row, center, center);
+                .info-text-content {
+                    margin-left: 16px;
+                    text-align: start;
+                }
+                &:first-child {
+                    .info-text-content {
+                        .info-title {
+                            text-transform: none;
+                        }
+                    }
+                }
+                &:last-child {
+                    .info-text-content {
+                        .info-title {
+                            text-transform: uppercase;
+                            span {
+                                color: $COLOR__BLUE;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

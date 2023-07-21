@@ -43,3 +43,33 @@
         border-radius: 20px;
     }
 }
+
+@media screen and (max-width: 950px) {
+    #modal-wrapper {
+        position: fixed;
+        min-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #modal-wrapper {
+        padding: 50px 20px;
+        @include flex(row, center, center);
+    }
+    .modal-title {
+        margin-bottom: 15px;
+        text-align: start;
+        @include font(25px, 600, 25px, $COLOR__RED);
+    }
+    .modal-text-content {
+        p {
+            @include font(12px, 400, 12px, $COLOR__WHITE);
+        }
+    }
+    .modal-list {
+        margin: 15px 0;
+        .modal-item {
+            @include font(10px, 300, 10px, #ffffff99);
+        }
+    }
+}

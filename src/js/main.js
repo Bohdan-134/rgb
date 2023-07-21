@@ -35,7 +35,7 @@ form.addEventListener("submit", function(e) {
     }
 
     if (!isValidPhoneNumber(iti.getNumber())) {
-        showError("Пожалуйста, введите правильный номер телефона.");
+        showError("Пожалуйста, введите правильный номер телефона. (макс. 9 цифр)");
         return;
     }
 

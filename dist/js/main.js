@@ -1,7 +1,7 @@
 
 import{animateDigits}from'./modules/animation.js';import{iti}from'./modules/iti.js';document.addEventListener('DOMContentLoaded',function(){animateDigits('.datatime-text__date',28,2500);animateDigits('.datatime-text__time',3.5,1500);});const form=document.getElementById('registrationForm');const name=document.getElementById("nameInput");const email=document.getElementById("emailInput");const submitBtn=document.getElementById('btnSendMessage');const publicKey='NV-xCivxFoWd-Yd9Y';const serviceID='service_1ofas5d';const templateID='template_oz8qpmq';emailjs.init(publicKey);form.addEventListener("submit",function(e){e.preventDefault();if(!isValidName(name.value)){showError("Пожалуйста, введите правильное имя и фамилию.");return;}
 if(!isValidEmail(email.value)){showError("Пожалуйста, введите правильный адрес электронной почты.");return;}
-if(!isValidPhoneNumber(iti.getNumber())){showError("Пожалуйста, введите правильный номер телефона.");return;}
+if(!isValidPhoneNumber(iti.getNumber())){showError("Пожалуйста, введите правильный номер телефона. (макс. 9 цифр)");return;}
 submitBtn.innerText='Подождите минутку...';const inputFields={name:name.value,phone:iti.getNumber(),email:email.value,}
 emailjs.send(serviceID,templateID,inputFields).then(()=>{submitBtn.innerText='Отправлено)';submitBtn.disabled=true;submitBtn.classList.add('disabled');form.reset();},(error)=>{console.log(error);});});function isValidName(name){return name.trim()!=='';}
 function isValidEmail(email){const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;return emailPattern.test(email);}
