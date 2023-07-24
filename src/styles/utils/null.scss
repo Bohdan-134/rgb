@@ -162,7 +162,8 @@ h6 {
     flex: 1;
     @include flex(row, center, center);
     .container {
-        @include flex(row, space-between, center);
+        position: relative;
+        @include flex(column, center, flex-start);
     }
 }
 
@@ -177,22 +178,6 @@ h6 {
 screen and (max-width: 1200px) {
     #wrapper {
         overflow-y: scroll;
-    }
-}
-
-@media screen and (min-width: 1600px) {
-    body {
-        background: rgb(51, 47, 101);
-        background: linear-gradient(212deg, rgba(51, 47, 101, 1) 0%, #942234 100%);
-        @include flex(row, center, center);
-    }
-    #wrapper {
-        height: 100%;
-        max-height: 820px;
-        max-width: 1440px;
-        border-radius: 30px;
-        background-color: #242731;
-        box-shadow: 0px 0px 20px $COLOR__BLACK;
     }
 }
 

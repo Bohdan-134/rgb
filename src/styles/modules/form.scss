@@ -1,7 +1,8 @@
 @import '../utils/main.utils.scss';
 .form-wrapper {
     padding: 50px 60px;
-    position: relative;
+    position: absolute;
+    right: 56px;
     z-index: 2;
     max-width: 365px;
     border-radius: 10px;
@@ -100,6 +101,14 @@
         text-align: center;
         animation: scale .4s;
         @include font(12px, 400, 12px, $COLOR__RED);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .form-wrapper {
+        margin-bottom: 50px;
+        position: relative;
+        right: 0;
     }
 }
 

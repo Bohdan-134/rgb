@@ -54,43 +54,6 @@
     @include font(18px, 400, 148%, $COLOR__WHITE);
 }
 
-.content-info-list {
-    .content-info-item {
-        margin-bottom: 11px;
-        @include flex(row, null, center);
-        .info-img {
-            min-width: 56px;
-            min-height: 62px;
-            @include flex(row, center, center);
-        }
-        .info-text-content {
-            margin-left: 17px;
-            .info-title {
-                @include font(12px, 700, 148%, $COLOR__WHITE);
-            }
-            .info-text {
-                @include font(12px, 400, 148%, $COLOR__WHITE);
-            }
-        }
-        &:first-child {
-            animation: to-top .7s 1s both;
-            .info-text-content {
-                .info-title {
-                    font-size: 13px;
-                    text-transform: uppercase;
-                    span {
-                        color: $COLOR__BLUE;
-                    }
-                }
-            }
-        }
-        &:last-child {
-            margin-bottom: 0;
-            animation: to-top .7s 1.2s both;
-        }
-    }
-}
-
 @media screen and (max-width: 950px) {
     .content {
         max-width: 100%;
@@ -98,9 +61,6 @@
     }
     .content-text {
         text-align: center;
-    }
-    .content-info-list {
-        display: none;
     }
 }
 

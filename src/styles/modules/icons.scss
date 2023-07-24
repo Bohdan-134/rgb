@@ -92,6 +92,42 @@
     }
 }
 
+@media screen and (min-width: 1600px) {
+    .icon-item {
+        .icon-wrapper {
+            img {
+                opacity: .2;
+            }
+            &::before {
+                opacity: .2;
+            }
+        }
+    }
+    .icon-item.html {
+        right: 45%;
+        top: 300px;
+    }
+    .icon-item.css {
+        right: auto;
+        left: 5%;
+    }
+    .icon-item.js {
+        top: 150px;
+        right: 120px;
+    }
+    .icon-item.sublime {
+        right: auto;
+        top: auto;
+        left: 7%;
+        bottom: 4%;
+    }
+    .icon-item.vs {
+        top: auto;
+        bottom: 100px;
+        right: 80px;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .icon-item {
         .icon-wrapper {
